@@ -4,9 +4,9 @@
 ## 1. 🎨 Présentation du projet
 
 ### Concept
-- Thème choisi : …
-- Public cible : …
-- Objectifs du site : …
+- Thème choisi : Les favoris d'automne 
+- Public cible : Tout le monde  
+- Objectifs du site : Informer sur les musiques, livres, films, destinations pour cet automne et des activités d'Halloween
 
 ### Fonctionnalités prévues
 - Navigation : …
@@ -35,7 +35,7 @@
 ## 3. 🛠️ Outils et méthodologie
 
 ### Environnement de travail
-- IDE : …
+- IDE : Webstorm
 - Navigateurs de test : …
 - Versioning : Git + GitHub
 - Validation : Validator W3C, PageSpeed Insights, Wave
