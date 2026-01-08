@@ -16,6 +16,7 @@
     font-style: normal;
 }
 
+
 /* =====================================
    2) VARIABLES
 ===================================== */
@@ -38,9 +39,9 @@
     --space-xl: 64px;
 
     --radius: 18px;
-
     --header-height: 70px;
 }
+
 
 /* =====================================
    3) RESET + BASE
@@ -82,6 +83,7 @@ iframe {
     border: 0;
 }
 
+
 /* =====================================
    4) TYPOGRAPHIE
 ===================================== */
@@ -99,24 +101,21 @@ h1 {
 }
 
 h2 {
-    font-size: 2.0rem;
+    font-size: 2rem;
 }
 
-/* sections */
 h3 {
     font-size: 1.2rem;
 }
 
-/* cartes */
-
 p {
     margin-top: 0;
     margin-bottom: var(--space-m);
-    max-width: none;
     text-align: justify;
     hyphens: auto;
     line-height: 1.55;
 }
+
 
 /* =====================================
    5) LAYOUT UTILITAIRES
@@ -143,6 +142,7 @@ p {
     padding: var(--space-m);
 }
 
+
 /* =====================================
    6) HEADER + NAV
 ===================================== */
@@ -154,12 +154,11 @@ p {
     line-height: 1;
 }
 
-.site-header .container{
+.site-header .container {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: center; /* clé */
+    align-items: center;
 }
-
 
 .logo {
     display: flex;
@@ -169,7 +168,6 @@ p {
 
 .logo img {
     height: 46px;
-    width: auto;
 }
 
 .nav-links {
@@ -203,75 +201,59 @@ p {
 
 @media (max-width: 600px) {
     .site-header .container {
-        min-height: auto;
-        padding-block: var(--space-s);
-        gap: var(--space-s);
-
         display: flex;
-        flex-direction: row;
-        align-items: center;
         justify-content: space-between;
-        flex-wrap: nowrap;
+        gap: var(--space-s);
     }
 
     .logo img {
         height: 30px;
-        flex-shrink: 0;
     }
 
     .nav-links {
-        display: flex;
-        flex-wrap: nowrap;
         gap: var(--space-s);
-
         overflow-x: auto;
-        white-space: nowrap;
-        min-width: 0;
-    }
-
-    .nav-links li {
-        flex: 0 0 auto;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
+        scrollbar-width: none;
     }
 
     .nav-links::-webkit-scrollbar {
         display: none;
     }
 
-    .nav-links {
-        scrollbar-width: none;
+    .nav-links a {
+        font-size: 0.85rem;
     }
 }
-.header-center{
+
+.header-center {
     display: flex;
     justify-content: center;
-    align-items: center; /* clé absolue */
+    align-items: center;
     pointer-events: none;
 }
 
-.header-title{
-    position: relative;          /* pour le ::after */
+.header-title {
+    position: relative;
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #163b66;
-    line-height: 1;              /* IMPORTANT */
+    line-height: 1;
 }
-.header-title::after{
+
+.header-title::after {
     content: "";
-    position: absolute;          /* SORT du flux */
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -8px;                /* distance sous le texte */
+    bottom: -8px;
     width: 36px;
     height: 2px;
     background: #d57a3a;
     border-radius: 999px;
 }
+
 
 /* =====================================
    7) BANNIÈRE ACCUEIL
@@ -280,14 +262,12 @@ p {
 .BanniereAccueil {
     width: 100%;
     height: 320px;
-
     background-image: url("../img/BanniereAccueil.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-/* Mobile */
 @media (max-width: 600px) {
     .BanniereAccueil {
         height: 260px;
@@ -295,7 +275,6 @@ p {
     }
 }
 
-/* Tablette */
 @media (min-width: 601px) and (max-width: 1023px) {
     .BanniereAccueil {
         height: 340px;
@@ -312,62 +291,56 @@ p {
     }
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     .BanniereAccueil {
         height: 480px;
         background-position: 50% 45%;
-
         margin-top: var(--space-m);
     }
 }
+
 
 /* =====================================
    7bis) INTRO ACCUEIL
 ===================================== */
 
-.intro{
-    margin-top: 24px;
-    margin-bottom: 40px;
+.intro {
+    margin: 24px 0 40px;
     padding: 24px;
-
     background-color: rgba(255, 255, 255, 0.78);
     border: 1px solid rgba(170, 180, 191, 0.6);
     border-radius: var(--radius);
 }
 
-.intro-title{
-    margin: 0 0 12px 0;
+.intro-title {
+    margin: 0 0 12px;
     text-align: center;
 }
 
-.intro-text{
-    margin: 0;
-    max-width: 70ch;
-    margin-left: auto;
-    margin-right: auto;
-
-    text-align: center;
-    hyphens: none;
-    line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 600px){
-    .intro{
-        padding: 16px;
-        margin-top: 16px;
-        margin-bottom: 24px;
-    }
-}
-
-.intro-kicker{
-    margin: 0 0 12px 0;
+.intro-kicker {
+    margin: 0 0 12px;
     text-align: center;
     color: var(--color-accent);
     letter-spacing: 0.06em;
     font-size: 0.95rem;
 }
+
+.intro-text {
+    margin: 0 auto;
+    max-width: 70ch;
+    text-align: center;
+    hyphens: none;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .intro {
+        padding: 16px;
+        margin: 16px 0 24px;
+    }
+}
+
+
 /* =====================================
    8) PLAYLISTS
 ===================================== */
@@ -376,18 +349,15 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-m);
-    width: 100%;
 }
 
 .playlist-tile {
     border: 1px solid var(--color-muted);
     background: var(--color-surface);
-    width: 100%;
 }
 
 .playlist-tile h3 {
-    margin: 0 0 var(--space-s) 0;
-    font-size: 1.1rem;
+    margin: 0 0 var(--space-s);
 }
 
 .playlist-tile iframe {
@@ -403,63 +373,44 @@ p {
     }
 }
 
-/* Desktop : 2 colonnes = Spotify joli */
-@media (min-width: 1024px) {
-    .playlist-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /* =====================================
    9) LIVRES
 ===================================== */
 
-/* --- Grille des livres --- */
 .books-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-m);
 }
 
-/* --- Carte livre --- */
 .book-item {
     display: flex;
     gap: var(--space-m);
     align-items: flex-start;
     border: 1px solid var(--color-muted);
-    border-radius: 20px;
+    border-radius: var(--radius);
     padding: var(--space-m);
     background-color: var(--color-bg);
 }
 
-/* --- Couverture --- */
 .book-cover {
     width: 110px;
     height: 160px;
-    flex-shrink: 0;
     border-radius: 16px;
     object-fit: cover;
 }
 
-/* --- Contenu texte --- */
 .book-body {
-    min-width: 0;
     flex: 1;
 }
 
-/* Titre */
 .book-body h3 {
-    margin: 0 0 var(--space-xs) 0;
+    margin: 0 0 var(--space-xs);
 }
 
-/* Résumé */
 .book-body p {
     margin: 0;
-    max-width: none;
-    width: 100%;
-    text-align: justify;
-    hyphens: auto;
-    line-height: 1.55;
 }
 
 @media (min-width: 1024px) {
@@ -477,10 +428,6 @@ p {
 .stack {
     display: grid;
     gap: var(--space-l);
-}
-
-.media-block h3 {
-    margin-top: 0;
 }
 
 .mosaic {
@@ -502,23 +449,18 @@ p {
     object-fit: cover;
 }
 
-@media (min-width: 768px) {
-    .mosaic {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (min-width: 1024px) {
     .mosaic {
         grid-template-columns: repeat(6, 1fr);
     }
 }
 
-/* =========================================================
-   RECETTES — DESIGN "IMAGE 2" + 2 LAYOUTS (split / triple)
-   ========================================================= */
 
-:root {
+/* =====================================
+   11) RECETTES
+===================================== */
+
+.page-recettes {
     --space-xs: 6px;
     --space-s: 10px;
     --space-m: 16px;
@@ -528,26 +470,22 @@ p {
     --radius-l: 22px;
 
     --card-bg: #ffffff;
-
-    /* look image 2 */
-    --box-bg: #f7ebe6; /* rose/beige clair */
+    --box-bg: #f7ebe6;
     --box-border: rgba(185, 120, 95, 0.25);
 
-    --title: #163b66; /* bleu titre */
-    --accent: #d57a3a; /* orange */
+    --title: #163b66;
+    --accent: #d57a3a;
     --text: #0f172a;
 
     --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
-/* LISTE */
 .recipe-list {
     display: flex;
     flex-direction: column;
     gap: var(--space-l);
 }
 
-/* CARTE */
 .recipe.card {
     background: var(--card-bg);
     border-radius: var(--radius-l);
@@ -556,49 +494,36 @@ p {
     border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-/* TITRE + soulignement orange */
 .recipe-title {
-    margin: 0 0 var(--space-m) 0;
+    margin: 0 0 var(--space-m);
     color: var(--title);
     font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
     font-weight: 700;
-    letter-spacing: 0.2px;
     position: relative;
     padding-bottom: 10px;
 }
 
 .recipe-title::after {
     content: "";
-    display: block;
     width: 70px;
     height: 3px;
     background: var(--accent);
     border-radius: 999px;
+    display: block;
     margin-top: 12px;
 }
 
-/* LAYOUT (base) */
 .recipe-layout {
     display: grid;
     gap: var(--space-l);
-    align-items: start;
-}
-
-/* MEDIA */
-.recipe-media {
-    width: 100%;
 }
 
 .recipe-img {
     width: 100%;
-    height: auto;
-    display: block;
     border-radius: var(--radius-m);
     object-fit: cover;
-    border: 1px solid rgba(15, 23, 42, 0.10);
 }
 
-/* CASES */
 .recipe-box {
     background: var(--box-bg);
     border: 1px solid var(--box-border);
@@ -606,9 +531,8 @@ p {
     padding: var(--space-l);
 }
 
-/* TITRES des boxes */
 .recipe-box h4 {
-    margin: 0 0 var(--space-m) 0;
+    margin: 0 0 var(--space-m);
     color: var(--accent);
     font-weight: 800;
     letter-spacing: 1px;
@@ -616,121 +540,59 @@ p {
     font-size: 0.95rem;
 }
 
-/* listes */
-.recipe-box ul,
-.recipe-box ol {
-    margin: 0;
-    padding-left: 1.2rem;
-    color: var(--text);
-}
-
-.recipe-box li {
-    margin: 0.55rem 0;
-    line-height: 1.5;
-}
-
-.recipe-box strong {
-    font-weight: 800;
-    color: var(--accent);
-}
-
-
-/* ===============================
-   MOBILE + TABLETTE
-   Image → Ingrédients → Préparation
-   =============================== */
-.recipe-layout{
-    display: grid;
+.recipe-layout {
     grid-template-columns: 1fr;
     grid-template-areas:
-    "title"
-    "media"
-    "ingredients"
-    "steps";
+        "title"
+        "media"
+        "ingredients"
+        "steps";
 }
 
-.recipe-title{ grid-area: title; }
-.recipe-media{ grid-area: media; }
-.recipe-ingredients{ grid-area: ingredients; }
-.recipe-steps{ grid-area: steps; }
+.recipe-title { grid-area: title; }
+.recipe-media { grid-area: media; }
+.recipe-ingredients { grid-area: ingredients; }
+.recipe-steps { grid-area: steps; }
 
-/* =========================================================
-   DESKTOP ONLY (>= 1024px)
-   3 colonnes alignées (même hauteur) + scroll dans les cases
-   ========================================================= */
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
+    .page-recettes { --recipe-row-h: 420px; }
 
-    /* hauteur commune de la ligne (ajuste) */
-    :root{ --recipe-row-h: 420px; }
-
-    /* Base */
-    .recipe-layout{
+    .recipe-layout {
         gap: 20px;
         align-items: stretch;
     }
 
-    /* SPLIT : image | ingrédients | préparation */
-    .recipe--split .recipe-layout{
+    .recipe--split .recipe-layout {
         grid-template-columns: 1.25fr 1fr 1fr;
         grid-template-rows: auto var(--recipe-row-h);
         grid-template-areas:
-      "title title title"
-      "media ingredients steps";
+            "title title title"
+            "media ingredients steps";
     }
 
-    /* TRIPLE : ingrédients | préparation | image */
-    .recipe--triple .recipe-layout{
+    .recipe--triple .recipe-layout {
         grid-template-columns: 1fr 1fr 1.25fr;
         grid-template-rows: auto var(--recipe-row-h);
         grid-template-areas:
-      "title title title"
-      "ingredients steps media";
+            "title title title"
+            "ingredients steps media";
     }
 
-    /* Les 3 blocs ont EXACTEMENT la même hauteur */
     .recipe-media,
     .recipe-ingredients,
-    .recipe-steps{
+    .recipe-steps {
         height: var(--recipe-row-h);
     }
 
-    /* Image = hauteur du bloc */
-    .recipe-img{
-        width: 100%;
+    .recipe-img {
         height: 100%;
-        object-fit: cover;
-        display: block;
     }
 
-    /* Case: padding + ombre + scroll propre */
-    .recipe-box{
-        height: 100%;
-        padding: 20px;
-        box-shadow: 0 8px 20px rgba(15,23,42,0.06);
-        overflow: hidden; /* on évite que la card entière scroll */
-    }
-
-    /* Le scroll se fait dans la zone texte */
-    .recipe-ingredients,
-    .recipe-steps{
+    .recipe-box {
         overflow: auto;
-        scrollbar-width: thin; /* Firefox */
-        scrollbar-color: rgba(213, 122, 58, 0.45) transparent; /* Firefox */
-    }
-
-    /* Scrollbar discrète (Chrome/Edge/Safari) */
-    .recipe-ingredients::-webkit-scrollbar,
-    .recipe-steps::-webkit-scrollbar{
-        width: 10px;
-    }
-    .recipe-ingredients::-webkit-scrollbar-thumb,
-    .recipe-steps::-webkit-scrollbar-thumb{
-        background: rgba(213, 122, 58, 0.35);
-        border-radius: 999px;
-        border: 2px solid rgba(255,255,255,0.6);
     }
 }
-.recipes{
+
+.recipes {
     padding-top: 32px;
 }
-
