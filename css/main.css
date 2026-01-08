@@ -1,27 +1,493 @@
-* {
+/* =====================================
+   1) FONTS
+===================================== */
+
+@font-face {
+    font-family: "Cormorant Garamond";
+    src: url("../fonts/CormorantGaramond.ttf") format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter.ttf") format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+/* =====================================
+   2) VARIABLES
+===================================== */
+
+:root{
+    --color-bg: #f3f1ed;
+    --color-surface: #ffffff;
+    --color-text: #24323f;
+    --color-primary: #014669;
+    --color-accent: #c96b3c;
+    --color-muted: #aab4bf;
+
+    --font-title: "Cormorant Garamond", serif;
+    --font-body: "Inter", system-ui, sans-serif;
+
+    --space-xs: 8px;
+    --space-s: 16px;
+    --space-m: 24px;
+    --space-l: 40px;
+    --space-xl: 64px;
+
+    --radius: 18px;
+}
+
+/* =====================================
+   3) RESET + BASE
+===================================== */
+
+*,
+*::before,
+*::after{
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
+body{
+    margin: 0;
+    font-family: var(--font-body);
     font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    color: darkblue;
-    background-color: whitesmoke;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
-img {
+img{
     max-width: 100%;
-    height: auto;
-    width: auto;
+    display: block;
 }
 
-a {
-    color: deeppink;
+iframe{
+    display: block;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =====================================
+   4) TYPOGRAPHIE
+===================================== */
+
+h1, h2, h3, h4{
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    letter-spacing: 0.04em;
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-s);
+}
+
+h1{ font-size: 2.6rem; }
+h2{ font-size: 2.0rem; } /* sections */
+h3{ font-size: 1.2rem; } /* cartes */
+
+p{
+    margin-top: 0;
+    margin-bottom: var(--space-m);
+    max-width: none;
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.55;
+
+}
+
+/* =====================================
+   5) LAYOUT UTILITAIRES
+===================================== */
+
+.container{
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: var(--space-m);
+}
+
+.section{
+    margin-bottom: var(--space-l);
+}
+
+.card{
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    padding: var(--space-m);
+}
+
+/* =====================================
+   6) HEADER + NAV
+===================================== */
+
+.site-header{
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-muted);
+}
+
+.site-header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+    gap: var(--space-m);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
     text-decoration: none;
 }
 
-a:hover {
-    color: darkmagenta;
+.logo img{
+    height: 46px;
+    width: auto;
 }
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: var(--space-m);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.nav-links a[aria-current="page"]{
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+@media (hover: hover){
+    .nav-links a:hover{
+        color: var(--color-primary);
+    }
+}
+
+/* Mobile header */
+@media (max-width: 600px){
+    .site-header .container{
+        min-height: auto;
+        padding-block: var(--space-s);
+    }
+
+    .logo img{
+        height: 30px;
+    }
+
+    .nav-links{
+        gap: var(--space-s);
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 6px;
+    }
+
+    .nav-links li{
+        flex: 0 0 auto;
+    }
+
+    .nav-links a{
+        font-size: 0.9rem;
+    }
+}
+
+/* =====================================
+   7) BANNIÈRE ACCUEIL
+===================================== */
+
+.BanniereAccueil{
+    background-image: url("../img/BanniereAccueil.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-l);
+    object-fit: cover;
+}
+
+@media (max-width: 600px){
+    .BanniereAccueil{ aspect-ratio: 4 / 5; }
+}
+
+@media (min-width: 601px) and (max-width: 1023px){
+    .BanniereAccueil{ aspect-ratio: 16 / 9; }
+}
+
+@media (min-width: 1024px){
+    .BanniereAccueil{ aspect-ratio: 21 / 9; }
+}
+
+/* =====================================
+   8) PLAYLISTS
+===================================== */
+
+.playlist-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-m);
+}
+
+.playlist-tile{
+    border: 1px solid var(--color-muted);
+    background: var(--color-surface);
+}
+
+.playlist-tile h3{
+    margin: 0 0 var(--space-s) 0;
+    font-size: 1.1rem;
+}
+
+.playlist-tile iframe{
+    width: 100%;
+    height: 352px;
+    border: 0;
+    border-radius: 14px;
+}
+
+@media (min-width: 768px){
+    .playlist-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop : 2 colonnes = Spotify joli */
+@media (min-width: 1024px){
+    .playlist-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================
+   9) LIVRES
+===================================== */
+
+/* --- Grille des livres --- */
+.books-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-m);
+}
+
+/* --- Carte livre --- */
+.book-item{
+    display: flex;
+    gap: var(--space-m);
+    align-items: flex-start;
+    border: 1px solid var(--color-muted);
+    border-radius: 20px;
+    padding: var(--space-m);
+    background-color: var(--color-bg);
+}
+
+/* --- Couverture --- */
+.book-cover{
+    width: 110px;
+    height: 160px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* --- Contenu texte --- */
+.book-body{
+    min-width: 0;
+    flex: 1;          /* prend toute la largeur restante dans le flex */
+}
+
+/* Titre */
+.book-body h3{
+    margin: 0 0 var(--space-xs) 0;
+}
+
+/* Résumé */
+.book-body p{
+    margin: 2;
+    max-width: none;
+    width: 100%;      /* évite toute "marche" visuelle */
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.55;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+/* --- Tablette : 2 colonnes + résumé légèrement limité --- */
+.book-body p{
+    margin: 0;
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.55;
+}
+
+/* --- Mobile : résumé plus court --- */
+.book-body p{
+    margin: 0;
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.55;
+}
+
+/* --- Desktop : résumé complet --- */
+@media (min-width: 1024px){
+    .book-body p{
+        text-align: left;
+        hyphens: none;
+    }
+}
+
+.book-body p{
+    margin: 0;
+    text-align: justify;
+    hyphens: auto;
+    line-height: 1.55;
+}
+
+/* =====================================
+   10) FILMS & SÉRIES
+===================================== */
+
+.stack{
+    display: grid;
+    gap: var(--space-l);
+}
+
+.media-block h3{
+    margin-top: 0;
+}
+
+.mosaic{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-s);
+}
+
+.media-title{
+    background-color: var(--color-surface);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.media-title img{
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+@media (min-width: 768px){
+    .mosaic{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px){
+    .mosaic{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* =====================================
+   11) PAGE 2 — RECETTES
+===================================== */
+
+.recipe-list{
+    display: grid;
+    gap: var(--space-l);
+}
+
+/* Une recette = image + texte */
+.recipe{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-m);
+    align-items: start;
+}
+
+/* Image recette */
+.recipe-img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Titres dans la carte (évite les grosses marges globales) */
+.recipe-body h3{
+    margin-top: 0;
+}
+
+/* Sous-titres */
+.recipe-body h4{
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+}
+
+/* Listes plus clean */
+.recipe-body ul,
+.recipe-body ol{
+    margin-top: 0;
+    margin-bottom: var(--space-m);
+    padding-left: 1.2rem;
+}
+
+.recipe-body li{
+    margin-bottom: 6px;
+}
+
+/* Alternance : image à droite */
+.recipe--reverse{
+    grid-template-columns: 1fr 280px;
+}
+
+.recipe--reverse .recipe-img{
+    grid-column: 2;
+}
+
+.recipe--reverse .recipe-body{
+    grid-column: 1;
+}
+
+/* Mobile : tout en colonne */
+@media (max-width: 768px){
+    .recipe,
+    .recipe--reverse{
+        grid-template-columns: 1fr;
+    }
+
+    .recipe--reverse .recipe-img,
+    .recipe--reverse .recipe-body{
+        grid-column: auto;
+    }
+
+    .recipe-img{
+        height: 240px;
+    }
+}
+
+
+
+

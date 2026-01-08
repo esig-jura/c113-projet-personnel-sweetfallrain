@@ -18,35 +18,39 @@
 <body>
 
 <header class="site-header">
-    <a href="#" class="logo">Logo du site</a>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <img src="img/logo/apple-touch-icon.png" alt="Winter Tales Logo">
+        </a>
 
-    <nav>
-        <ul class="menu nav-links">
-            <li>
-                <a aria-current="page" href="index.html">Divertissements</a>
-            </li>
-            <li>
-                <a href="recettes.html">Les délices d'hiver</a>
-            </li>
-            <li>
-                <a href="loisirs&cadeaux.html">Activités & Cadeaux à offrir</a>
-            </li>
-        </ul>
-    </nav>
+        <nav>
+            <ul class="nav-links">
+                <li><a aria-current="page" href="index.html">Divertissements</a></li>
+                <li><a href="recettes.html">Les délices d'hiver</a></li>
+                <li><a href="loisirs&cadeaux.html">Activités & Cadeaux à offrir</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
+<section class="BanniereAccueil"></section>
+<h1 class="sr-only">Winter Tales</h1>
+
 <main class="container">
-    <h1>Winter Tales</h1>
-    <p> Bienvenue à Winter Tales, une saison enchantée avec un soupçon de magie.</p>
 
     <section class="section">
-        <h2> Playlists d'hivers</h2>
-        <p>De Mariah Carey à Sia, tous sont là pour t'accompagner cet hiver dans la musique et la bonne humeur.</p>
+        <h2>Un hiver en musique</h2>
+        <p>
+            Quand les journées raccourcissent et que le froid s’installe, la musique devient une véritable
+            compagne du quotidien. Cette sélection de playlists réunit des titres entraînants, réconfortants
+            ou plus doux, parfaits pour accompagner l’hiver, entre moments cocooning, trajets enneigés et
+            instants de bonne humeur.
+        </p>
 
         <div class="playlist-grid">
 
             <!-- Playlist 1 -->
-            <article class="card playlist-title">
+            <article class="card playlist-tile">
                 <h3>Playlist 1</h3>
                 <iframe data-testid="embed-iframe" style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/4eehe84AOxcmm5hTRtS2jg?utm_source=generator"
@@ -57,7 +61,7 @@
             </article>
 
             <!-- Playlist 2 -->
-            <article class="card playlist-title">
+            <article class="card playlist-tile">
                 <h3>Playlist 2</h3>
                 <iframe data-testid="embed-iframe" style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/5YB8bsZEhUO0wBGnpduDes?utm_source=generator"
@@ -68,8 +72,8 @@
             </article>
 
             <!-- Playlist 3 -->
+            <article class="card playlist-tile">
             <h3>Playlist 3</h3>
-            <article class="card playlist-title">
                 <iframe data-testid="embed-iframe" style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/4WcHG1g0WabM1K53blc9sh?utm_source=generator"
                         width="100%"
@@ -79,7 +83,7 @@
             </article>
 
             <!--Playlist 4 -->
-            <article class="card playlist-title">
+            <article class="card playlist-tile">
                 <h3>Playlist 4</h3>
                 <iframe data-testid="embed-iframe" style="border-radius:12px"
                         src="https://open.spotify.com/embed/playlist/0IdoITS2RoNMybX2mBR3hc?utm_source=generator&theme=0"
@@ -92,166 +96,108 @@
     </section>
 
     <section class="section">
-        <h2>Livres, chocolat chaud et plaid</h2>
-        <p> Voici une série de livres pour te mettre dans l'ambiance.</p>
+        <h2>Lectures au coin du feu</h2>
+        <p>
+            L’hiver est la saison idéale pour ralentir et se laisser porter par une bonne histoire.
+            Cette sélection de livres invite à s’installer confortablement, sous un plaid, avec une
+            boisson chaude à portée de main, pendant que le monde extérieur se couvre de silence.
+        </p>
 
         <div class="books-grid">
 
             <article class="card book-item">
-                <img src="img/livres/JonhGreen_FloconsDamour.jpg" alt="Flocons D'amour">
+                <img class="book-cover" src="img/livres/JonhGreen_FloconsDamour.jpg" alt="Flocons d'amour">
                 <div class="book-body">
                     <h3>Flocons d'amour - John Green</h3>
-                    <p> 24 décembre. Nuit des miracles ? Ou des catastrophes ? Une terrible tempête, un train bloqué
-                        dans la
-                        neige.
-                        Gracetown : tous les voyageurs descendent ! Gracetown… Bourgade perdue au milieu de nulle part
-                        qui vous
-                        ferait presque regretter le traditionnel et soporifique repas de Noël. Pourtant, Jed, Jubilé, et
-                        les
-                        autres vont
-                        partager le réveillon le plus insolite de leur vie. Dans un café bondé de pom-pom girls ou au
-                        détour
-                        d'une route
-                        enneigée, les rencontres inattendues se multiplient. Les couples se font, se défont et se
-                        refondent.
-                        Louvoyant
-                        entre les flocons, les flèches de Cupidon qui pleuvent sur la ville ne laisseront personne de
-                        glace
-                        !</p>
+                    <p>
+                        24 décembre. Nuit des miracles ? Ou des catastrophes ? Une terrible tempête,
+                        un train bloqué dans la neige. Gracetown : tous les voyageurs descendent !
+                        Bourgade perdue au milieu de nulle part qui vous ferait presque regretter
+                        le traditionnel repas de Noël. Pourtant, Jed, Jubilé et les autres vont
+                        partager le réveillon le plus insolite de leur vie…
+                    </p>
                 </div>
             </article>
 
             <article class="card book-item">
-                <img src="img/livres/SophieJomain_SecretSanta.jpg" alt="Secret Santa">
+                <img class="book-cover" src="img/livres/SophieJomain_SecretSanta.jpg" alt="Secret Santa">
                 <div class="book-body">
                     <h3>Secret Santa - Sophie Jomain</h3>
-                    <p>Quand on vient d'une famille comme la mienne, on a tout pour être heureux.
-                        La liberté, les voyages, l'argent... J'ai un appart que j'adore, la meilleure coloc du monde et
-                        je
-                        peux
-                        faire les études que je veux... mais il me manque l'essentiel : l'envie.
-                        Je crois que je vais tout plaquer.
-                        Pour quoi ? Pour qui ?
-                        Je ne sais pas encore et c'est peut-être ça le pire.
-                        Mais cette asso pour les étudiants moins chanceux que moi, dans laquelle j'ai accepté de
-                        travailler
-                        tout
-                        le mois de décembre, pourrait bien changer la donne.
-                        Là-bas, je vais devoir organiser le meilleur Secret Santa de toute ma vie, et faire comprendre
-                        au
-                        mystérieux
-                        Romeo, que ses yeux dans les miens, sera notre plus beau cadeau. </p>
+                    <p>
+                        Quand on vient d’une famille comme la mienne, on a tout pour être heureux : la liberté,
+                        les voyages, l’argent… et pourtant, il me manque l’essentiel. L’envie. À l’approche de Noël,
+                        je décide alors de m’engager dans une association pour étudiants moins chanceux que moi.
+                        Entre l’organisation d’un Secret Santa pas comme les autres et une rencontre inattendue,
+                        ce mois de décembre pourrait bien changer ma vie à jamais.
+                    </p>
                 </div>
             </article>
 
             <article class="card book-item">
-                <img src="img/livres/KatherineArden_Ours&Rossignol.jpg" alt="L'Ours et le Rossignol">
+                <img class="book-cover" src="img/livres/KatherineArden_Ours&Rossignol.jpg" alt="L'Ours et le Rossignol">
                 <div class="book-body">
                     <h3>L'ours et le rossignol - Katherine Arden</h3>
-                    <p>Au plus froid de l'hiver, Vassia adore par-dessus tout écouter, avec ses frères et sa soeur, les
-                        contes
-                        de
-                        Dounia, la vieille servante. Et plus particulièrement celui de Gel, ou Morozko, le démon aux
-                        yeux
-                        bleus,
-                        le roi de l'hiver. Mais, pour Vassia, ces histoires sont bien plus que cela. En effet, elle est
-                        la
-                        seule
-                        de
-                        la fratrie à voir les esprits protecteurs de la maison, à entendre l'appel insistant des sombres
-                        forces
-                        nichées au plus profond de la forêt. Ce qui n'est pas du goût de la nouvelle femme de son père,
-                        dévote acharnée, bien décidée à éradiquer de son foyer les superstitions ancestrales.</p>
+                    <p>
+                        Au cœur d’un hiver rude et enneigé, Vassia grandit bercée par les contes anciens que lui
+                        raconte Dounia, la vieille servante. Des histoires de créatures magiques, d’esprits protecteurs
+                        et du roi de l’hiver, Morozko. Mais pour Vassia, ces récits sont bien réels : elle est la seule
+                        à voir les forces qui habitent la forêt et protègent la maison. Lorsque la nouvelle épouse de
+                        son père tente d’effacer ces traditions, la magie et le danger se réveillent peu à peu.
+                    </p>
                 </div>
             </article>
 
             <article class="card book-item">
-                <img src="img/livres/LouisaMayAlcott_QuatresFillesDocteurMarch.jpg"
+                <img class="book-cover" src="img/livres/LouisaMayAlcott_QuatresFillesDocteurMarch.jpg"
                      alt="Les Quatre Filles du Docteur March">
                 <div class="book-body">
                     <h3>Les Quatre filles du docteur March - Louisa May Alcott</h3>
-                    <p>Dans une petite ville du Massachussetts, durant la guerre de Sécession, une famille modeste,
-                        quatre
-                        jeunes
-                        soeurs et leur mère, guette avec inquiétude chaque lettre du père parti au front. Mais rien ne
-                        peut
-                        arrêter
-                        la jeunesse, et la vie continue à façonner les destinées de Meg, l'aînée pragmatique et
-                        conformiste,
-                        Amy la frivole, Jo, la romancière en herbe et féministe avant l'heure, et la douce Beth, à la
-                        santé
-                        fragile.
-                        De l'enfance à l'âge adulte, confrontées à la découverte de soi, elles partagent une joie de
-                        vivre
-                        débordante apprenant la sororité, l'amitié mais aussi le sacrifice. Ensemble, ces quatre
-                        adolescentes
-                        impétueuses sauront réclamer à ce monde bien plus qu'il ne semble pouvoir leur offrir.</p>
+                    <p>
+                        Dans une petite ville du Massachusetts, pendant la guerre de Sécession, quatre sœurs grandissent
+                        aux côtés de leur mère, dans l’attente des nouvelles du père parti au front. Entre rêves,
+                        épreuves et élans de jeunesse, Meg, Jo, Beth et Amy apprennent à devenir elles-mêmes. De l’enfance
+                        à l’âge adulte, elles découvrent la force des liens familiaux, l’amitié, la sororité et les
+                        sacrifices qui forgent une vie.
+                    </p>
                 </div>
             </article>
 
             <article class="card book-item">
-                <img src="img/livres/LigueImaginaire_LePireDesNoels.jpg" alt="Pire Des Noëls Spécial frayeurs">
+                <img class="book-cover" src="img/livres/LigueImaginaire_LePireDesNoels.jpg" alt="Pire Des Noëls Spécial frayeurs">
                 <div class="book-body">
                     <h3>Le Pire des Noëls Spécial frayeur - La Ligue de l'imaginaire</h3>
-                    <p>La Ligue de l’Imaginaire vous donne rendez-vous pour un Noël de sueurs froides et de frissons !
-                        Onze auteurs s’engagent et offrent dans ce recueil des histoires riches en sensations fortes et
-                        en
-                        émotions.
-                        Certaines vous feront peur ou douter de la réalité, d’autres vous couperont le souffle ou vous
-                        glaceront
-                        le
-                        sang… Vous êtes prévenus, ce sera le pire des Noëls !
-                        En achetant ce livre, vous soutenez l’action du CTEB qui favorise l’accès au livre et à la
-                        culture
-                        des
-                        aveugles.
-                        Le Centre de transcription et d’édition en braille est une association à but non lucratif et
-                        reconnue
-                        d’intérêt général, parrainée par l’écrivain Bernard Minier. Elle agit depuis 37 ans pour adapter
-                        l’actualité
-                        littéraire en braille et tous types de projets à la déficience visuelle.</p>
+                    <p>
+                        Et si Noël devenait synonyme de frissons ? Dans ce recueil, plusieurs auteurs revisitent les
+                        fêtes de fin d’année à travers des histoires sombres et inquiétantes. Entre mystère,
+                        fantastique et sensations fortes, chaque récit joue avec la peur et l’imaginaire, promettant
+                        un Noël loin des traditions, où la magie laisse place aux frayeurs les plus inattendues.
+                    </p>
                 </div>
             </article>
 
             <article class="card book-item">
-                <img src="img/livres/SarahMorgan_NoelSurprise.jpg" alt="Noël Surprise dans les Highlands">
+                <img class="book-cover" src="img/livres/SarahMorgan_NoelSurprise.jpg" alt="Noël Surprise dans les Highlands">
                 <div class="book-body">
                     <h3>Noël surprise dans les Highlands - Sarah Morgan</h3>
-                    <p>A Noël, les miracles éclairent le ciel des Highlands…
-
-                        Dans ce manoir isolé au cœur des Highlands, Gayle se sent perdue. Si elle a proposé à ses filles
-                        de
-                        passer
-                        Noël en Écosse, c’était dans une tentative désespérée de ressouder sa famille. Seulement, ces
-                        lieux
-                        ravivent
-                        en elle la mémoire de son premier amour, des souvenirs dont ses filles ignorent tout, et que
-                        Gayle
-                        préférerait garder secrets…
-                        Ella ne sait plus sur quel pied danser. Sa mère, cette business woman redoutable, qu’elle
-                        pensait
-                        dépourvue
-                        de sentiments, a soudain insisté pour qu’elles passent les fêtes ensemble... après cinq ans sans
-                        nouvelles !
-                        Aujourd’hui maman à son tour, Ella s’inquiète : Gayle-sans-cœur a-t-elle vraiment changé ou
-                        risque-t-elle
-                        d’être une grand-mère décevante pour sa petite Tab ?
-                        Quant à Samantha, elle meurt d’envie d’associer son agence de voyage à ce magnifique manoir.
-                        Mais
-                        comment
-                        rester professionnelle face à Brodie, le propriétaire, qui la perturbe tant ? Cet Écossais si
-                        séduisant
-                        n’a
-                        qu’à la regarder pour lui faire perdre tous ses moyens…</p>
+                    <p>
+                        À l’approche de Noël, Gayle emmène ses filles dans un manoir isolé au cœur des Highlands,
+                        espérant recoller les morceaux d’une famille brisée. Mais ce séjour réveille souvenirs,
+                        secrets et émotions enfouies depuis longtemps. Entre retrouvailles, doutes et rencontres
+                        inattendues, les paysages enneigés d’Écosse pourraient bien offrir une seconde chance,
+                        portée par la magie de Noël.
+                    </p>
                 </div>
             </article>
         </div>
     </section>
 
-
     <section class="section">
-        <h2>Films & Séries</h2>
-        <p>Voici une séléction de films et séries à regarder quand dehors les flocons tombent.</p>
+        <h2>Cinéma d'hiver</h2>
+        <p>
+            Quand le froid s’installe et que les flocons tombent dehors, rien de tel qu’un bon film
+            ou une série pour se réfugier bien au chaud. Cette sélection a été pensée pour accompagner
+            les longues soirées d’hiver, entre évasion, émotions et instants de douceur.
+        </p>
 
         <div class="stack">
 
@@ -280,7 +226,7 @@
                         <img src="img/films&series/IlEtaitTemps.jpg" alt="Il était temps">
                     </article>
 
-                    <article>
+                    <article class="media-title">
                         <img src="img/films&series/LifeList.jpg" alt="Demain est un autre jour">
                     </article>
                 </div>
@@ -319,7 +265,6 @@
         </div>
     </section>
 </main>
-
 <footer>
     &copy;2025 Jessica M.
 </footer>
